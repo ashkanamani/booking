@@ -36,7 +36,7 @@ func main() {
 		log.Fatal("Can not create template cache!", err)
 	}
 	app.TemplateCache = tc
-	app.UseCache = false
+	app.UseCache = app.InProduction
 
 	repo := handlers.NewRepo(&app)
 	handlers.NewHandlers(repo)
